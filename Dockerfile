@@ -8,4 +8,4 @@ RUN git clone https://github.com/Code-X-Mania/web-url-short
 RUN cd web-url-short
 WORKDIR /web-url-short
 RUN pip3 install -U -r requirements.txt
-CMD python3 main.py
+CMD python3 manage.py collectstatic --noinput; gunicorn shorty.wsgi --log-file -
